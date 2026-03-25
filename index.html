@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-
-<style>
-    body {
-        height: 100vh;
-        width: 182vh;
-        overflow: hidden;
-        margin: 0px;
-        padding: 0px
-    }
-
-    iframe {
-        width: 100%;
-        height: calc(100% + 37px + 23px);
-    }
-</style>
-
-<html lang="en-US">
-
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Dashboard Gerencial - RN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos Engpac</title>
+    
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw; /* Ocupa 100% da largura da tela */
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            
+            /* Ativa o Flexbox para centralizar o conteúdo */
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            background-color: #f0f0f0; /* Cor de fundo opcional caso sobre espaço nas laterais */
+        }
+
+        iframe {
+            width: 182vh; /* A sua proporção original baseada na altura */
+            height: calc(100% + 37px + 23px);
+            flex-shrink: 0; /* Garante que o iframe não seja espremido em telas mais estreitas */
+            border: none; /* Substitui o 'frameborder="0"' que é obsoleto no HTML5 */
+        }
+    </style>
 </head>
 
 <body>
-    <iframe title="DashboardGerencial - RN"
+    <iframe 
+        title="DashboardGerencial - RN"
         src="https://app.powerbi.com/view?r=eyJrIjoiZjc2ZDU5MDEtNTc2Yi00ZjlmLWIwNDUtNDA0OGQ1ODkyZWRmIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9"
-        frameborder="0" allowFullScreen="true"></iframe>
+        allowFullScreen="true">
+    </iframe>
 </body>
-
 </html>
