@@ -1,38 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projetos Engpac</title>
-    
-    <style>
-        body {
-            height: 100vh;
-            width: 100vw; /* Ocupa 100% da largura da tela */
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            
-            /* Ativa o Flexbox para centralizar o conteúdo */
-            display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-            background-color: #f0f0f0; /* Cor de fundo opcional caso sobre espaço nas laterais */
-        }
-
-        iframe {
-            width: 182vh; /* A sua proporção original baseada na altura */
-            height: calc(100% + 37px + 23px);
-            flex-shrink: 0; /* Garante que o iframe não seja espremido em telas mais estreitas */
-            border: none; /* Substitui o 'frameborder="0"' que é obsoleto no HTML5 */
-        }
-    </style>
+    <title>Engpac PowerBI Hub</title>
+    <meta name="description" content="Hub de dashboards Power BI dos polos Engpac.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="img/engpac_logo.png">
 </head>
 
 <body>
-    <iframe 
-        title="DashboardGerencial - RN"
-        src="https://app.powerbi.com/view?r=eyJrIjoiZjc2ZDU5MDEtNTc2Yi00ZjlmLWIwNDUtNDA0OGQ1ODkyZWRmIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9"
-        allowFullScreen="true">
-    </iframe>
+
+    <!-- Overlay -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- Sidebar Drawer -->
+    <aside class="sidebar-drawer" id="sidebar-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/engpac_logo.png" alt="Engpac Logo">
+                </div>
+                <span class="logo-text">Engpac <strong>BI</strong></span>
+            </div>
+            <button class="drawer-close-btn" id="drawer-close" aria-label="Fechar menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="drawer-search">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" placeholder="Buscar polo..." id="search-input">
+            </div>
+        </div>
+
+        <nav class="drawer-nav">
+            <ul class="nav-list" id="nav-list">
+                <!-- Polos will be rendered here -->
+            </ul>
+        </nav>
+
+        <div class="drawer-footer">
+            <span>Engpac Projetos © 2026</span>
+        </div>
+    </aside>
+
+    <!-- Full-screen iframe area -->
+    <main class="main-content">
+
+        <!-- Floating Menu Button (center-top) -->
+        <div class="top-bar">
+            <button class="menu-fab" id="menu-toggle" aria-label="Abrir menu">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span id="active-polo-name">Selecionar Polo</span>
+                <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loader">
+            <div class="spinner-ring"></div>
+            <p class="loading-text">Carregando dashboard...</p>
+        </div>
+
+        <iframe id="report-iframe" title="Power BI Report" allowfullscreen="true"></iframe>
+    </main>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
