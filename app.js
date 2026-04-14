@@ -12,7 +12,7 @@ const POLOS = [
     {
         id: 'PR',
         name: 'Paraná',
-        url: 'https://app.powerbi.com/view?r=eyJrIjoiNWI1YTY1ZmYtNWYxYi00MmUwLWIxN2YtNDdiZWQzOWE0ZWM3IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiNzFlNDgxMzgtMTFhMC00MjM2LWEwZjQtYmY2ZjNhM2I4N2ZhIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     },
     {
         id: 'RS',
