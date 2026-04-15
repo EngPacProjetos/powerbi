@@ -2,17 +2,17 @@ const POLOS = [
     {
         id: 'RN',
         name: 'Rio Grande do Norte',
-        url: 'https://app.powerbi.com/view?r=eyJrIjoiOTc0MTkwNTItODU5Ni00ZjM5LWIzYzEtN2EwMzcyZGExNTU1IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiZjc2ZDU5MDEtNTc2Yi00ZjlmLWIwNDUtNDA0OGQ1ODkyZWRmIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     },
     {
         id: 'PB',
         name: 'Paraíba',
-        url: 'https://app.powerbi.com/view?r=eyJrIjoiNWI0N2ViNDAtYjYxYi00ODI5LWIwOTctMDc4ODBjMDk5ZTJmIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiZTI3MGE5YzktNDhhMS00MzRkLWI2ZWYtOWI3M2ZhM2RjZjU5IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     },
     {
         id: 'PR',
         name: 'Paraná',
-        url: 'https://app.powerbi.com/view?r=eyJrIjoiNzFlNDgxMzgtMTFhMC00MjM2LWEwZjQtYmY2ZjNhM2I4N2ZhIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiNDhkNTg0NjQtNWMzYS00MTg5LTlkMjgtZGIzZjVkZDgyZWY1IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     },
     {
         id: 'RS',
@@ -22,7 +22,7 @@ const POLOS = [
     {
         id: 'PE',
         name: 'Pernambuco',
-        url: 'https://app.powerbi.com/view?r=eyJrIjoiZGU4NzUyODYtY2NhMi00MGZmLWIwMTItM2U0MDYyNzYwMDJmIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiZmQ4ZjkxNGUtN2IxYi00NmNiLWFiNTYtN2FkY2M0ODkwZGMzIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     }
 ];
 
