@@ -23,6 +23,11 @@ const POLOS = [
         id: 'PE',
         name: 'Pernambuco',
         url: 'https://app.powerbi.com/view?r=eyJrIjoiZmQ4ZjkxNGUtN2IxYi00NmNiLWFiNTYtN2FkY2M0ODkwZGMzIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+    },
+    {
+        id: 'GL',
+        name: 'Geral',
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiMzkwZTNiMTYtZWVlNS00N2ZlLWE3YTYtNjAwNGZiZDA2NjE0IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     }
 ];
 
@@ -36,6 +41,7 @@ function init() {
     const menuToggle = document.getElementById('menu-toggle');
     const drawerClose = document.getElementById('drawer-close');
     const activePoloName = document.getElementById('active-polo-name');
+    const externalLink = document.getElementById('external-link');
 
     // ---- Drawer open / close ----
     function openDrawer() {
@@ -79,7 +85,7 @@ function init() {
 
         filtered.forEach(polo => {
             const li = document.createElement('li');
-            li.className = 'nav-item';
+            li.className = `nav-item ${polo.id === 'GL' ? 'nav-item-special' : ''}`;
             li.innerHTML = `
                 <a href="#${polo.id}" class="nav-link ${hash === polo.id ? 'active' : ''}">
                     <span class="polo-id">${polo.id}</span>
@@ -90,6 +96,38 @@ function init() {
             navList.appendChild(li);
         });
     }
+
+    // ---- Render External Links Menu ----
+    function renderExternalLinks() {
+        const container = document.getElementById('external-links-list');
+        container.innerHTML = '';
+        
+        POLOS.forEach(polo => {
+            const a = document.createElement('a');
+            a.href = polo.url;
+            a.target = '_blank';
+            a.className = 'external-item';
+            a.innerHTML = `
+                <span class="ext-id">${polo.id}</span>
+                <span class="ext-name">${polo.name}</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+            `;
+            container.appendChild(a);
+        });
+    }
+
+    const extMenuBtn = document.getElementById('external-link');
+    const extMenuContent = document.getElementById('external-menu-content');
+
+    extMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        extMenuContent.classList.toggle('open');
+        extMenuBtn.classList.toggle('active');
+    });
 
 
     // ---- Load Report ----
@@ -128,6 +166,7 @@ function init() {
 
     // ---- Init ----
     renderNav();
+    renderExternalLinks();
     loadReport();
 
     // Open drawer initially if no polo is selected
