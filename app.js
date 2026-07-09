@@ -25,6 +25,11 @@ const POLOS = [
         url: 'https://app.powerbi.com/view?r=eyJrIjoiZmQ4ZjkxNGUtN2IxYi00NmNiLWFiNTYtN2FkY2M0ODkwZGMzIiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
     },
     {
+        id: 'F1',
+        name: 'Financeiro 1',
+        url: 'https://app.powerbi.com/view?r=eyJrIjoiYWUxZDY4ZTktNTVlYy00MzkzLWFjYjItZThlZjBhNDRmM2I3IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
+    },
+    {
         id: 'GL',
         name: 'Geral',
         url: 'https://app.powerbi.com/view?r=eyJrIjoiMzkwZTNiMTYtZWVlNS00N2ZlLWE3YTYtNjAwNGZiZDA2NjE0IiwidCI6IjIzMzBlMWVlLTAwYWMtNGVlZi1iNzkzLWU3YzFhMmE0NmU3ZSJ9'
