@@ -47,6 +47,9 @@ function init() {
     const drawerClose = document.getElementById('drawer-close');
     const activePoloName = document.getElementById('active-polo-name');
     const externalLink = document.getElementById('external-link');
+    const topBar = document.getElementById('top-bar');
+    const hideMenuBtn = document.getElementById('hide-menu-btn');
+    const showMenuBtn = document.getElementById('show-menu-btn');
 
     // ---- Drawer open / close ----
     function openDrawer() {
@@ -63,6 +66,16 @@ function init() {
 
     menuToggle.addEventListener('click', () => {
         drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+
+    hideMenuBtn.addEventListener('click', () => {
+        topBar.classList.add('hidden');
+        showMenuBtn.classList.remove('hidden');
+    });
+
+    showMenuBtn.addEventListener('click', () => {
+        topBar.classList.remove('hidden');
+        showMenuBtn.classList.add('hidden');
     });
 
     drawerClose.addEventListener('click', closeDrawer);

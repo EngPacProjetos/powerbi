@@ -74,7 +74,7 @@ html, body {
 /* ============================================
    FLOATING TOP BAR — MENU BUTTON (CENTER TOP)
    ============================================ */
-.top-bar {
+.top-bar-wrapper {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -82,7 +82,56 @@ html, body {
     z-index: 300;
     display: flex;
     align-items: center;
-    pointer-events: none; /* let clicks pass through the bar itself */
+    justify-content: center;
+    pointer-events: none;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.top-bar.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.visibility-btn {
+    pointer-events: all;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(15, 22, 41, 0.85);
+    backdrop-filter: blur(16px) saturate(1.5);
+    -webkit-backdrop-filter: blur(16px) saturate(1.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.25s var(--ease);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.visibility-btn:hover {
+    color: var(--text-main);
+    background: rgba(20, 30, 60, 0.9);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.show-btn {
+    position: absolute;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.show-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
 }
 
 .menu-fab {
