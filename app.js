@@ -153,6 +153,13 @@ function init() {
         // Show loading overlay
         loader.classList.remove('hidden');
         iframe.classList.remove('loaded');
+        
+        if (polo.id === 'F1') {
+            iframe.classList.add('show-bottom-bar');
+        } else {
+            iframe.classList.remove('show-bottom-bar');
+        }
+
         iframe.src = polo.url;
 
         iframe.onload = () => {

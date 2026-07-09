@@ -67,6 +67,10 @@ html, body {
     opacity: 1;
 }
 
+#report-iframe.show-bottom-bar {
+    height: calc(100% + 36px); /* Remove o corte de 52px da barra inferior, mantendo apenas o corte do topo (-36px) */
+}
+
 /* ============================================
    FLOATING TOP BAR — MENU BUTTON (CENTER TOP)
    ============================================ */
