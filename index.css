@@ -51,13 +51,13 @@ html, body {
    ============================================ */
 #report-iframe {
     position: absolute;
-    /* Crop PowerBI top bar (~36px) and bottom toolbar (~52px) */
-    top: -36px;
+    /* Alinha o topo para não cortar o relatório e define a altura extra para cortar a barra inferior */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 177.77vh;
     max-width: none;
-    height: calc(100% + 88px); /* 36px top + 52px bottom */
+    height: calc(100% + 56px); /* 56px para esconder a barra inferior do Power BI */
     border: none;
     opacity: 0;
     transition: opacity 0.6s var(--ease);
